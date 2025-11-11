@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeremy Yamaguchi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-color: #fafafa;
+            --text-color: #2c2c2c;
+            --accent-color: #4a90e2;
+            --secondary-color: #e8f1f8;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: var(--bg-color);
+            overflow-x: hidden;
+        }
+
+        /* Background decorative elements */
+        .bg-decoration {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-decoration::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(74, 144, 226, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -100px;
+            right: -100px;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .bg-decoration::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(74, 144, 226, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            bottom: -50px;
+            left: -50px;
+            animation: float 15s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0);
+            }
+            50% {
+                transform: translate(-30px, -30px);
+            }
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            padding: 4rem 0 2rem;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            font-weight: 300;
+        }
+
+        section {
+            margin: 4rem 0;
+            padding: 3rem 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        section:first-of-type {
+            border-top: none;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--accent-color);
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        ul li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            p, ul li {
+                font-size: 1rem;
+            }
+
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            section {
+                margin: 3rem 0;
+                padding: 2rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-decoration"></div>
+
+    <div class="container">
+        <header>
+            <h1>Jeremy Yamaguchi</h1>
+            <p class="subtitle">Entrepreneur • Investor • Builder</p>
+        </header>
+
+        <main>
+            <section id="about">
+                <h2>About me</h2>
+                <p>
+                    Welcome to my corner of the internet. I'm passionate about building
+                    products that make a difference and investing in the future.
+                </p>
+                <p>
+                    [Add your personal story and background here]
+                </p>
+            </section>
+
+            <section id="investments">
+                <h2>Investments</h2>
+                <p>
+                    I invest in early-stage companies and founders who are building the future.
+                </p>
+                <ul>
+                    <li>[Investment or company 1]</li>
+                    <li>[Investment or company 2]</li>
+                    <li>[Investment or company 3]</li>
+                    <li>[Add more investments here]</li>
+                </ul>
+            </section>
+
+            <section id="excited">
+                <h2>Things I'm excited about</h2>
+                <ul>
+                    <li>[Technology or trend 1]</li>
+                    <li>[Technology or trend 2]</li>
+                    <li>[Technology or trend 3]</li>
+                    <li>[Add more things you're excited about]</li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Jeremy Yamaguchi. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
