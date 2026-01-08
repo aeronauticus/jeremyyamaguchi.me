@@ -3,7 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jeremy Yamaguchi</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Primary Meta Tags -->
+    <title>Jeremy Yamaguchi - Entrepreneur, Investor & Builder</title>
+    <meta name="title" content="Jeremy Yamaguchi - Entrepreneur, Investor & Builder">
+    <meta name="description" content="Jeremy Yamaguchi is an entrepreneur, investor, and builder focused on early-stage technology companies and innovative products that shape the future.">
+    <meta name="keywords" content="Jeremy Yamaguchi, entrepreneur, investor, technology, startup, venture capital, builder, innovation">
+    <meta name="author" content="Jeremy Yamaguchi">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://jeremyyamaguchi.me/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jeremyyamaguchi.me/">
+    <meta property="og:title" content="Jeremy Yamaguchi - Entrepreneur, Investor & Builder">
+    <meta property="og:description" content="Jeremy Yamaguchi is an entrepreneur, investor, and builder focused on early-stage technology companies and innovative products that shape the future.">
+    <meta property="og:site_name" content="Jeremy Yamaguchi">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://jeremyyamaguchi.me/">
+    <meta property="twitter:title" content="Jeremy Yamaguchi - Entrepreneur, Investor & Builder">
+    <meta property="twitter:description" content="Jeremy Yamaguchi is an entrepreneur, investor, and builder focused on early-stage technology companies and innovative products that shape the future.">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Jeremy Yamaguchi",
+      "url": "https://jeremyyamaguchi.me",
+      "jobTitle": "Entrepreneur and Investor",
+      "description": "Entrepreneur, investor, and builder focused on early-stage technology companies",
+      "sameAs": []
+    }
+    </script>
+
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
@@ -12,10 +53,14 @@
         }
 
         :root {
-            --bg-color: #fafafa;
-            --text-color: #2c2c2c;
-            --accent-color: #4a90e2;
-            --secondary-color: #e8f1f8;
+            --bg-color: #ffffff;
+            --secondary-bg: #f8f9fa;
+            --text-primary: #1a1a1a;
+            --text-secondary: #4a5568;
+            --text-muted: #718096;
+            --accent-color: #2563eb;
+            --accent-light: #dbeafe;
+            --border-color: #e2e8f0;
         }
 
         html {
@@ -23,14 +68,24 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text-primary);
             background: var(--bg-color);
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Background decorative elements */
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--text-primary);
+        }
+
+        /* Background decoration */
         .bg-decoration {
             position: fixed;
             width: 100%;
@@ -39,81 +94,112 @@
             left: 0;
             z-index: -1;
             overflow: hidden;
+            pointer-events: none;
         }
 
         .bg-decoration::before {
             content: '';
             position: absolute;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(74, 144, 226, 0.08) 0%, transparent 70%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.03) 0%, transparent 70%);
             border-radius: 50%;
             top: -100px;
             right: -100px;
-            animation: float 20s ease-in-out infinite;
+            animation: float 25s ease-in-out infinite;
         }
 
         .bg-decoration::after {
             content: '';
             position: absolute;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(74, 144, 226, 0.05) 0%, transparent 70%);
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.02) 0%, transparent 70%);
             border-radius: 50%;
-            bottom: -50px;
-            left: -50px;
-            animation: float 15s ease-in-out infinite reverse;
+            bottom: -80px;
+            left: -80px;
+            animation: float 20s ease-in-out infinite reverse;
         }
 
         @keyframes float {
             0%, 100% {
-                transform: translate(0, 0);
+                transform: translate(0, 0) scale(1);
             }
-            50% {
-                transform: translate(-30px, -30px);
+            33% {
+                transform: translate(30px, -30px) scale(1.05);
+            }
+            66% {
+                transform: translate(-20px, 20px) scale(0.95);
             }
         }
 
+        /* Container */
         .container {
-            max-width: 800px;
+            max-width: 760px;
             margin: 0 auto;
             padding: 0 2rem;
         }
 
+        /* Header */
         header {
-            padding: 4rem 0 2rem;
+            padding: 5rem 0 3rem;
             text-align: center;
+            animation: fadeInDown 0.8s ease-out;
         }
 
         h1 {
-            font-size: 3rem;
-            font-weight: 300;
-            letter-spacing: -0.02em;
-            margin-bottom: 0.5rem;
-            color: var(--text-color);
+            font-size: 3.5rem;
+            font-weight: 600;
+            letter-spacing: -0.03em;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
         }
 
         .subtitle {
-            font-size: 1.1rem;
-            color: #666;
-            font-weight: 300;
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+            letter-spacing: 0.01em;
         }
 
+        /* Sections */
         section {
-            margin: 4rem 0;
-            padding: 3rem 0;
-            border-top: 1px solid rgba(0, 0, 0, 0.05);
-            animation: fadeIn 0.8s ease-in;
+            margin: 5rem 0;
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
         }
 
-        section:first-of-type {
-            border-top: none;
+        section:nth-child(1) {
+            animation-delay: 0.1s;
         }
 
-        @keyframes fadeIn {
+        section:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        section:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        section:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
             }
             to {
                 opacity: 1;
@@ -122,10 +208,10 @@
         }
 
         h2 {
-            font-size: 1.8rem;
-            font-weight: 400;
-            margin-bottom: 1.5rem;
-            color: var(--text-color);
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
             position: relative;
             display: inline-block;
         }
@@ -133,70 +219,166 @@
         h2::after {
             content: '';
             position: absolute;
-            bottom: -8px;
+            bottom: -10px;
             left: 0;
-            width: 40px;
-            height: 2px;
+            width: 50px;
+            height: 3px;
             background: var(--accent-color);
+            border-radius: 2px;
         }
 
         p {
-            font-size: 1.1rem;
+            font-size: 1.125rem;
             line-height: 1.8;
-            color: #555;
-            margin-bottom: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.25rem;
         }
 
+        /* Lists */
         ul {
             list-style: none;
             padding-left: 0;
         }
 
         ul li {
-            font-size: 1.1rem;
+            font-size: 1.125rem;
             line-height: 1.8;
-            color: #555;
-            margin-bottom: 0.8rem;
-            padding-left: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            padding-left: 1.75rem;
             position: relative;
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        ul li:hover {
+            transform: translateX(5px);
+            color: var(--text-primary);
         }
 
         ul li::before {
-            content: '•';
+            content: '→';
             position: absolute;
             left: 0;
             color: var(--accent-color);
-            font-weight: bold;
+            font-weight: 500;
+            font-size: 1.2rem;
         }
 
+        /* Links */
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.2s ease, border-bottom 0.2s ease;
+            border-bottom: 1px solid transparent;
+        }
+
+        a:hover {
+            color: #1e40af;
+            border-bottom: 1px solid #1e40af;
+        }
+
+        /* Contact section */
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.75rem 1.5rem;
+            background: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .contact-link:hover {
+            background: var(--accent-light);
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+        }
+
+        /* Footer */
         footer {
             text-align: center;
-            padding: 3rem 0;
-            color: #999;
-            font-size: 0.9rem;
+            padding: 4rem 0 3rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 6rem;
+        }
+
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
         }
 
         /* Responsive design */
         @media (max-width: 768px) {
             h1 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
 
             h2 {
-                font-size: 1.5rem;
+                font-size: 1.75rem;
             }
 
             p, ul li {
                 font-size: 1rem;
             }
 
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
             .container {
                 padding: 0 1.5rem;
             }
 
+            header {
+                padding: 3rem 0 2rem;
+            }
+
             section {
-                margin: 3rem 0;
-                padding: 2rem 0;
+                margin: 3.5rem 0;
+            }
+
+            .contact-links {
+                flex-direction: column;
+            }
+
+            .contact-link {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            .bg-decoration {
+                display: none;
+            }
+
+            body {
+                background: white;
             }
         }
     </style>
@@ -212,37 +394,65 @@
 
         <main>
             <section id="about">
-                <h2>About me</h2>
+                <h2>About</h2>
                 <p>
-                    Welcome to my corner of the internet. I'm passionate about building
-                    products that make a difference and investing in the future.
+                    Welcome to my corner of the internet. I'm an entrepreneur and investor
+                    focused on building products and backing companies that create meaningful
+                    impact in the world.
                 </p>
                 <p>
-                    [Add your personal story and background here]
+                    I'm passionate about early-stage technology companies, innovative business
+                    models, and the people who are brave enough to bring bold ideas to life.
+                    My work spans across investing in founders, building products, and exploring
+                    emerging technologies that will shape our future.
                 </p>
+            </section>
+
+            <section id="work">
+                <h2>What I Do</h2>
+                <ul>
+                    <li>Invest in early-stage technology companies and exceptional founders</li>
+                    <li>Build and advise startups on product strategy and growth</li>
+                    <li>Explore emerging technologies and market opportunities</li>
+                    <li>Connect talented people with resources and opportunities</li>
+                </ul>
             </section>
 
             <section id="investments">
-                <h2>Investments</h2>
+                <h2>Portfolio & Projects</h2>
                 <p>
-                    I invest in early-stage companies and founders who are building the future.
+                    I invest in companies at the intersection of technology and innovation,
+                    with a focus on teams that are solving important problems in novel ways.
                 </p>
                 <ul>
-                    <li>[Investment or company 1]</li>
-                    <li>[Investment or company 2]</li>
-                    <li>[Investment or company 3]</li>
-                    <li>[Add more investments here]</li>
+                    <li>Early-stage technology investments across SaaS, AI, and consumer tech</li>
+                    <li>Advisory roles with high-growth startups</li>
+                    <li>Side projects and experimental ventures</li>
                 </ul>
             </section>
 
-            <section id="excited">
-                <h2>Things I'm excited about</h2>
+            <section id="interests">
+                <h2>Current Interests</h2>
                 <ul>
-                    <li>[Technology or trend 1]</li>
-                    <li>[Technology or trend 2]</li>
-                    <li>[Technology or trend 3]</li>
-                    <li>[Add more things you're excited about]</li>
+                    <li>Artificial intelligence and machine learning applications</li>
+                    <li>Developer tools and infrastructure</li>
+                    <li>Future of work and productivity</li>
+                    <li>Climate tech and sustainable technology</li>
+                    <li>New models for education and learning</li>
                 </ul>
+            </section>
+
+            <section id="contact">
+                <h2>Get in Touch</h2>
+                <p>
+                    I'm always interested in meeting founders working on interesting problems,
+                    connecting with fellow investors, or discussing new ideas.
+                </p>
+                <div class="contact-links">
+                    <a href="mailto:hello@jeremyyamaguchi.me" class="contact-link">Email</a>
+                    <a href="https://twitter.com/jeremyyamaguchi" class="contact-link" target="_blank" rel="noopener noreferrer">Twitter</a>
+                    <a href="https://linkedin.com/in/jeremyyamaguchi" class="contact-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </div>
             </section>
         </main>
 
