@@ -40,11 +40,6 @@
     }
     </script>
 
-    <!-- Preconnect to Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
     <style>
         * {
             margin: 0;
@@ -52,412 +47,252 @@
             box-sizing: border-box;
         }
 
-        :root {
-            --bg-color: #ffffff;
-            --secondary-bg: #f8f9fa;
-            --text-primary: #1a1a1a;
-            --text-secondary: #4a5568;
-            --text-muted: #718096;
-            --accent-color: #2563eb;
-            --accent-light: #dbeafe;
-            --border-color: #e2e8f0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.7;
-            color: var(--text-primary);
-            background: var(--bg-color);
-            overflow-x: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fafafa;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Typography */
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Raleway', sans-serif;
-            font-weight: 600;
-            line-height: 1.3;
-            color: var(--text-primary);
-        }
-
-        /* Background decoration */
-        .bg-decoration {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            overflow: hidden;
-            pointer-events: none;
-        }
-
-        .bg-decoration::before {
-            content: '';
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(37, 99, 235, 0.03) 0%, transparent 70%);
-            border-radius: 50%;
-            top: -100px;
-            right: -100px;
-            animation: float 25s ease-in-out infinite;
-        }
-
-        .bg-decoration::after {
-            content: '';
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(37, 99, 235, 0.02) 0%, transparent 70%);
-            border-radius: 50%;
-            bottom: -80px;
-            left: -80px;
-            animation: float 20s ease-in-out infinite reverse;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translate(0, 0) scale(1);
-            }
-            33% {
-                transform: translate(30px, -30px) scale(1.05);
-            }
-            66% {
-                transform: translate(-20px, 20px) scale(0.95);
-            }
-        }
-
-        /* Container */
         .container {
-            max-width: 760px;
+            max-width: 600px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 60px 24px;
         }
 
-        /* Header */
-        header {
-            padding: 5rem 0 3rem;
+        /* Profile Section */
+        .profile {
             text-align: center;
-            animation: fadeInDown 0.8s ease-out;
+            margin-bottom: 60px;
+        }
+
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 24px;
+            background: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
         }
 
         h1 {
-            font-size: 3.5rem;
+            font-size: 32px;
             font-weight: 600;
-            letter-spacing: -0.03em;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
+            color: #1a1a1a;
+            margin-bottom: 8px;
         }
 
         .subtitle {
-            font-size: 1.25rem;
-            color: var(--text-secondary);
+            font-size: 16px;
+            color: #666;
             font-weight: 400;
-            letter-spacing: 0.01em;
         }
 
-        /* Sections */
-        section {
-            margin: 5rem 0;
-            animation: fadeInUp 0.8s ease-out;
-            animation-fill-mode: both;
+        /* Content Sections */
+        .section {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 24px;
+            margin-bottom: 48px;
+            align-items: start;
         }
 
-        section:nth-child(1) {
-            animation-delay: 0.1s;
+        .section-label {
+            font-size: 14px;
+            color: #999;
+            padding-top: 2px;
         }
 
-        section:nth-child(2) {
-            animation-delay: 0.2s;
+        .section-content {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #1a1a1a;
         }
 
-        section:nth-child(3) {
-            animation-delay: 0.3s;
+        .section-content p {
+            margin-bottom: 16px;
         }
 
-        section:nth-child(4) {
-            animation-delay: 0.4s;
+        .section-content p:last-child {
+            margin-bottom: 0;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        h2 {
-            font-size: 2rem;
-            font-weight: 600;
-            margin-bottom: 2rem;
-            color: var(--text-primary);
-            position: relative;
-            display: inline-block;
-        }
-
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--accent-color);
-            border-radius: 2px;
-        }
-
-        p {
-            font-size: 1.125rem;
-            line-height: 1.8;
-            color: var(--text-secondary);
-            margin-bottom: 1.25rem;
-        }
-
-        /* Lists */
-        ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        ul li {
-            font-size: 1.125rem;
-            line-height: 1.8;
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-            padding-left: 1.75rem;
-            position: relative;
-            transition: transform 0.2s ease, color 0.2s ease;
-        }
-
-        ul li:hover {
-            transform: translateX(5px);
-            color: var(--text-primary);
-        }
-
-        ul li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: var(--accent-color);
-            font-weight: 500;
-            font-size: 1.2rem;
-        }
-
-        /* Links */
         a {
-            color: var(--accent-color);
-            text-decoration: none;
-            transition: color 0.2s ease, border-bottom 0.2s ease;
-            border-bottom: 1px solid transparent;
+            color: #0066cc;
+            text-decoration: underline;
         }
 
         a:hover {
-            color: #1e40af;
-            border-bottom: 1px solid #1e40af;
+            color: #0052a3;
         }
 
-        /* Contact section */
-        .contact-links {
+        .signature {
+            margin-top: 24px;
+            color: #666;
+        }
+
+        /* Contact Buttons */
+        .contact-buttons {
             display: flex;
+            gap: 12px;
+            margin-top: 24px;
             flex-wrap: wrap;
-            gap: 1.5rem;
-            margin-top: 2rem;
         }
 
-        .contact-link {
+        .btn {
             display: inline-flex;
             align-items: center;
-            padding: 0.75rem 1.5rem;
-            background: var(--secondary-bg);
-            border: 1px solid var(--border-color);
+            gap: 8px;
+            padding: 10px 20px;
+            border: 1px solid #d0d0d0;
             border-radius: 8px;
-            color: var(--text-primary);
+            background: white;
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 14px;
             font-weight: 500;
             transition: all 0.2s ease;
         }
 
-        .contact-link:hover {
-            background: var(--accent-light);
-            border-color: var(--accent-color);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+        .btn:hover {
+            border-color: #1a1a1a;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .btn svg {
+            width: 16px;
+            height: 16px;
         }
 
         /* Footer */
         footer {
             text-align: center;
-            padding: 4rem 0 3rem;
-            border-top: 1px solid var(--border-color);
-            margin-top: 6rem;
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            color: #666;
         }
 
-        footer p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
+        .signature-img {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 20px;
+            color: #1a1a1a;
         }
 
-        /* Responsive design */
+        /* Responsive */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-
-            h2 {
-                font-size: 1.75rem;
-            }
-
-            p, ul li {
-                font-size: 1rem;
-            }
-
-            .subtitle {
-                font-size: 1.1rem;
-            }
-
             .container {
-                padding: 0 1.5rem;
+                padding: 40px 20px;
             }
 
-            header {
-                padding: 3rem 0 2rem;
+            .section {
+                grid-template-columns: 1fr;
+                gap: 8px;
             }
 
-            section {
-                margin: 3.5rem 0;
+            .section-label {
+                font-size: 13px;
             }
 
-            .contact-links {
+            h1 {
+                font-size: 28px;
+            }
+
+            .profile-pic {
+                width: 100px;
+                height: 100px;
+                font-size: 40px;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+
+            .contact-buttons {
                 flex-direction: column;
             }
 
-            .contact-link {
+            .btn {
                 width: 100%;
                 justify-content: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 2rem;
-            }
-
-            h2 {
-                font-size: 1.5rem;
-            }
-
-            .container {
-                padding: 0 1rem;
-            }
-        }
-
-        /* Print styles */
-        @media print {
-            .bg-decoration {
-                display: none;
-            }
-
-            body {
-                background: white;
             }
         }
     </style>
 </head>
 <body>
-    <div class="bg-decoration"></div>
-
     <div class="container">
-        <header>
+        <!-- Profile -->
+        <div class="profile">
+            <div class="profile-pic">👤</div>
             <h1>Jeremy Yamaguchi</h1>
-            <p class="subtitle">Entrepreneur • Investor • Builder</p>
-        </header>
+            <p class="subtitle">Entrepreneur & Investor</p>
+        </div>
 
-        <main>
-            <section id="about">
-                <h2>About</h2>
-                <p>
-                    Welcome to my corner of the internet. I'm an entrepreneur and investor
-                    focused on building products and backing companies that create meaningful
-                    impact in the world.
-                </p>
-                <p>
-                    I'm passionate about early-stage technology companies, innovative business
-                    models, and the people who are brave enough to bring bold ideas to life.
-                    My work spans across investing in founders, building products, and exploring
-                    emerging technologies that will shape our future.
-                </p>
-            </section>
+        <!-- About Section -->
+        <div class="section">
+            <div class="section-label">/about</div>
+            <div class="section-content">
+                <p>Hey! I'm Jeremy. I work with early-stage technology companies, helping founders build products that solve real problems. I've invested in and advised startups across SaaS, AI, and consumer tech, with a focus on teams that move fast and think differently.</p>
+                <p>I'm passionate about building things that matter—whether it's investing in exceptional founders, exploring new technologies, or working on side projects that push boundaries.</p>
+            </div>
+        </div>
 
-            <section id="work">
-                <h2>What I Do</h2>
-                <ul>
-                    <li>Invest in early-stage technology companies and exceptional founders</li>
-                    <li>Build and advise startups on product strategy and growth</li>
-                    <li>Explore emerging technologies and market opportunities</li>
-                    <li>Connect talented people with resources and opportunities</li>
-                </ul>
-            </section>
+        <!-- Projects Section -->
+        <div class="section">
+            <div class="section-label">/projects</div>
+            <div class="section-content">
+                <p>I invest in companies at the intersection of technology and innovation. My portfolio includes early-stage investments across various sectors, from developer tools to climate tech. I also advise startups on product strategy, growth, and fundraising.</p>
+                <p>Outside of investing, I build tools and experiment with new ideas—always looking for ways to help people work smarter and move faster.</p>
+            </div>
+        </div>
 
-            <section id="investments">
-                <h2>Portfolio & Projects</h2>
-                <p>
-                    I invest in companies at the intersection of technology and innovation,
-                    with a focus on teams that are solving important problems in novel ways.
-                </p>
-                <ul>
-                    <li>Early-stage technology investments across SaaS, AI, and consumer tech</li>
-                    <li>Advisory roles with high-growth startups</li>
-                    <li>Side projects and experimental ventures</li>
-                </ul>
-            </section>
+        <!-- Contact Section -->
+        <div class="section">
+            <div class="section-label">/contact</div>
+            <div class="section-content">
+                <p>Working on something interesting? I'm always down to talk about new ideas, investment opportunities, or just connect with fellow builders. Hit me up on <a href="https://linkedin.com/in/jeremyyamaguchi" target="_blank" rel="noopener noreferrer">LinkedIn</a>, shoot me an <a href="mailto:hello@jeremyyamaguchi.me">email</a>, or reach out on <a href="https://twitter.com/jeremyyamaguchi" target="_blank" rel="noopener noreferrer">Twitter</a>.</p>
+                <p class="signature">— Jeremy</p>
 
-            <section id="interests">
-                <h2>Current Interests</h2>
-                <ul>
-                    <li>Artificial intelligence and machine learning applications</li>
-                    <li>Developer tools and infrastructure</li>
-                    <li>Future of work and productivity</li>
-                    <li>Climate tech and sustainable technology</li>
-                    <li>New models for education and learning</li>
-                </ul>
-            </section>
-
-            <section id="contact">
-                <h2>Get in Touch</h2>
-                <p>
-                    I'm always interested in meeting founders working on interesting problems,
-                    connecting with fellow investors, or discussing new ideas.
-                </p>
-                <div class="contact-links">
-                    <a href="mailto:hello@jeremyyamaguchi.me" class="contact-link">Email</a>
-                    <a href="https://twitter.com/jeremyyamaguchi" class="contact-link" target="_blank" rel="noopener noreferrer">Twitter</a>
-                    <a href="https://linkedin.com/in/jeremyyamaguchi" class="contact-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <div class="contact-buttons">
+                    <a href="https://twitter.com/jeremyyamaguchi" class="btn" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                        </svg>
+                        twitter
+                    </a>
+                    <a href="mailto:hello@jeremyyamaguchi.me" class="btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        email
+                    </a>
+                    <a href="https://linkedin.com/in/jeremyyamaguchi" class="btn" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                        linkedin
+                    </a>
                 </div>
-            </section>
-        </main>
+            </div>
+        </div>
 
+        <!-- Footer -->
         <footer>
-            <p>&copy; 2025 Jeremy Yamaguchi. All rights reserved.</p>
+            <div>© 2025 - Built with passion. Typeset in SF Pro.</div>
+            <div class="signature-img">Jeremy Yamaguchi</div>
         </footer>
     </div>
 </body>
