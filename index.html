@@ -40,11 +40,6 @@
     }
     </script>
 
-    <!-- Preconnect to Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
     <style>
         * {
             margin: 0;
@@ -52,386 +47,266 @@
             box-sizing: border-box;
         }
 
-        :root {
-            --bg-color: #ffffff;
-            --secondary-bg: #f8f9fa;
-            --text-primary: #1a1a1a;
-            --text-secondary: #4a5568;
-            --text-muted: #718096;
-            --accent-color: #2563eb;
-            --accent-light: #dbeafe;
-            --border-color: #e2e8f0;
-        }
-
         html {
             scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.7;
-            color: var(--text-primary);
-            background: var(--bg-color);
-            overflow-x: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fafafa;
+            padding: 40px 20px;
+            max-width: 680px;
+            margin: 0 auto;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Typography */
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Raleway', sans-serif;
-            font-weight: 600;
-            line-height: 1.3;
-            color: var(--text-primary);
-        }
-
-        /* Background decoration */
-        .bg-decoration {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            overflow: hidden;
-            pointer-events: none;
-        }
-
-        .bg-decoration::before {
-            content: '';
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(37, 99, 235, 0.03) 0%, transparent 70%);
-            border-radius: 50%;
-            top: -100px;
-            right: -100px;
-            animation: float 25s ease-in-out infinite;
-        }
-
-        .bg-decoration::after {
-            content: '';
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(37, 99, 235, 0.02) 0%, transparent 70%);
-            border-radius: 50%;
-            bottom: -80px;
-            left: -80px;
-            animation: float 20s ease-in-out infinite reverse;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translate(0, 0) scale(1);
-            }
-            33% {
-                transform: translate(30px, -30px) scale(1.05);
-            }
-            66% {
-                transform: translate(-20px, 20px) scale(0.95);
-            }
-        }
-
-        /* Container */
-        .container {
-            max-width: 760px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Header */
-        header {
-            padding: 5rem 0 3rem;
+        /* Profile Photo */
+        .profile-section {
             text-align: center;
-            animation: fadeInDown 0.8s ease-out;
+            margin-bottom: 40px;
         }
 
-        h1 {
-            font-size: 3.5rem;
-            font-weight: 600;
-            letter-spacing: -0.03em;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        .subtitle {
-            font-size: 1.25rem;
-            color: var(--text-secondary);
-            font-weight: 400;
-            letter-spacing: 0.01em;
-        }
-
-        /* Sections */
-        section {
-            margin: 5rem 0;
-            animation: fadeInUp 0.8s ease-out;
-            animation-fill-mode: both;
-        }
-
-        section:nth-child(1) {
-            animation-delay: 0.1s;
-        }
-
-        section:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-
-        section:nth-child(3) {
-            animation-delay: 0.3s;
-        }
-
-        section:nth-child(4) {
-            animation-delay: 0.4s;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        h2 {
-            font-size: 2rem;
-            font-weight: 600;
-            margin-bottom: 2rem;
-            color: var(--text-primary);
-            position: relative;
+        .profile-photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            background: #e0e0e0;
             display: inline-block;
         }
 
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--accent-color);
-            border-radius: 2px;
+        .name {
+            font-size: 32px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 8px;
         }
 
-        p {
-            font-size: 1.125rem;
-            line-height: 1.8;
-            color: var(--text-secondary);
-            margin-bottom: 1.25rem;
+        .role {
+            font-size: 18px;
+            color: #666;
+            font-weight: 400;
+            margin-bottom: 0;
         }
 
-        /* Lists */
-        ul {
-            list-style: none;
-            padding-left: 0;
+        /* Section Layout */
+        .section-wrapper {
+            display: flex;
+            margin-bottom: 50px;
+            gap: 20px;
         }
 
-        ul li {
-            font-size: 1.125rem;
-            line-height: 1.8;
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-            padding-left: 1.75rem;
-            position: relative;
-            transition: transform 0.2s ease, color 0.2s ease;
+        .section-label {
+            font-size: 13px;
+            color: #999;
+            min-width: 80px;
+            padding-top: 2px;
+            flex-shrink: 0;
         }
 
-        ul li:hover {
-            transform: translateX(5px);
-            color: var(--text-primary);
+        .section-content {
+            flex: 1;
         }
 
-        ul li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: var(--accent-color);
-            font-weight: 500;
-            font-size: 1.2rem;
+        .section-content p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+        }
+
+        .section-content p:last-child {
+            margin-bottom: 0;
         }
 
         /* Links */
         a {
-            color: var(--accent-color);
-            text-decoration: none;
-            transition: color 0.2s ease, border-bottom 0.2s ease;
-            border-bottom: 1px solid transparent;
+            color: #1a1a1a;
+            text-decoration: underline;
+            transition: color 0.2s ease;
         }
 
         a:hover {
-            color: #1e40af;
-            border-bottom: 1px solid #1e40af;
+            color: #666;
         }
 
-        /* Contact section */
-        .contact-links {
+        /* Contact Buttons */
+        .contact-buttons {
             display: flex;
+            gap: 12px;
+            margin-top: 30px;
             flex-wrap: wrap;
-            gap: 1.5rem;
-            margin-top: 2rem;
         }
 
-        .contact-link {
+        .contact-button {
             display: inline-flex;
             align-items: center;
-            padding: 0.75rem 1.5rem;
-            background: var(--secondary-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            color: var(--text-primary);
-            font-weight: 500;
+            gap: 8px;
+            padding: 10px 20px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            background: white;
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 14px;
             transition: all 0.2s ease;
         }
 
-        .contact-link:hover {
-            background: var(--accent-light);
-            border-color: var(--accent-color);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+        .contact-button:hover {
+            border-color: #999;
+            background: #fafafa;
+        }
+
+        .contact-button svg {
+            width: 16px;
+            height: 16px;
         }
 
         /* Footer */
-        footer {
-            text-align: center;
-            padding: 4rem 0 3rem;
-            border-top: 1px solid var(--border-color);
-            margin-top: 6rem;
+        .footer-wrapper {
+            display: flex;
+            margin-top: 60px;
+            padding-top: 30px;
+            gap: 20px;
         }
 
-        footer p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
+        .footer-content {
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        /* Responsive design */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
+        .footer-text {
+            font-size: 14px;
+            color: #1a1a1a;
+        }
+
+        .signature {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 24px;
+            color: #1a1a1a;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .section-wrapper {
+                flex-direction: column;
+                gap: 8px;
             }
 
-            h2 {
-                font-size: 1.75rem;
+            .section-label {
+                min-width: auto;
             }
 
-            p, ul li {
-                font-size: 1rem;
+            .footer-wrapper {
+                flex-direction: column;
+                gap: 8px;
             }
 
-            .subtitle {
-                font-size: 1.1rem;
+            .footer-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
             }
 
-            .container {
-                padding: 0 1.5rem;
-            }
-
-            header {
-                padding: 3rem 0 2rem;
-            }
-
-            section {
-                margin: 3.5rem 0;
-            }
-
-            .contact-links {
+            .contact-buttons {
                 flex-direction: column;
             }
 
-            .contact-link {
+            .contact-button {
                 width: 100%;
                 justify-content: center;
             }
-        }
 
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 2rem;
+            .name {
+                font-size: 28px;
             }
 
-            h2 {
-                font-size: 1.5rem;
-            }
-
-            .container {
-                padding: 0 1rem;
-            }
-        }
-
-        /* Print styles */
-        @media print {
-            .bg-decoration {
-                display: none;
-            }
-
-            body {
-                background: white;
+            .role {
+                font-size: 16px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="bg-decoration"></div>
+    <!-- Profile Section -->
+    <div class="profile-section">
+        <img src="https://via.placeholder.com/140" alt="Jeremy Yamaguchi" class="profile-photo">
+        <h1 class="name">Jeremy Yamaguchi</h1>
+        <p class="role">Founder & CEO @ Cabana</p>
+    </div>
 
-    <div class="container">
-        <header>
-            <h1>Jeremy Yamaguchi</h1>
-            <p class="subtitle">Founder & CEO - Cabana</p>
-        </header>
+    <!-- About Section -->
+    <div class="section-wrapper">
+        <div class="section-label">/about</div>
+        <div class="section-content">
+            <p>
+                I'm a career entrepreneur and have spent the last fifteen years building companies at the intersection of technology and home services. I most recently founded <a href="https://lawnlove.com" target="_blank">Lawn Love</a>—a YC-backed lawn care marketplace–which I grew to 250 corporate employees and 7,000+ field technicians, with operations in 120 cities across 40 states. In 2021 Lawn Love merged with a competitor to create the largest marketplace in the lawn and garden category.
+            </p>
+            <p>
+                Prior to that I founded another home services company called Golden Shine. We were ranked #5 on the FAST100 list of fastest growing privately owned companies in 2013 and acquired by a PE firm the same year. Prior to that I started a marketing agency in my early 20s, which is where I cut my teeth on growth marketing and lead gen.
+            </p>
+            <p>
+                I'm now building <a href="https://cabanapools.com" target="_blank">Cabana</a>, a tech-enabled roll-up in pool service. We partner with wonderful pool companies, and help them scale.
+            </p>
+        </div>
+    </div>
 
-        <main>
-            <section id="about">
-                <h2>About</h2>
-                <p>
-                    I’m a career entrepreneur and have spent the last fifteen years building companies at the intersection of technology and home services. I most recently founded Lawn Love—a YC-backed lawn care marketplace–which I grew to 250 corporate employees and 7,000+ field technicians, with operations in 120 cities across 40 states. In 2021 Lawn Love merged with a competitor to create the largest marketplace in the lawn and garden category.
-                </p>
-                <p>
-                    Prior to that I founded another home services company called Golden Shine. We were ranked #5 on the FAST100 list of fastest growing privately owned companies in 2013 and acquired by a PE firm the same year. Prior to that I started a marketing agency in my early 20s, which is where I cut my teeth on growth marketing and lead gen.
-                </p>
-                <p>
-                    I'm now building Cabana, a tech-enabled roll-up in pool service. We partner with wonderful pool companies, and help them scale.
-                </p>
-            </section>
+    <!-- Projects Section -->
+    <div class="section-wrapper">
+        <div class="section-label">/projects</div>
+        <div class="section-content">
+            <p>
+                I invest in companies at the intersection of technology and innovation, with a focus on teams that are solving important problems in novel ways. I take on advisory roles with high-growth startups and work on experimental side projects.
+            </p>
+        </div>
+    </div>
 
-            <section id="investments">
-                <h2>Portfolio & Projects</h2>
-                <p>
-                    I invest in companies at the intersection of technology and innovation,
-                    with a focus on teams that are solving important problems in novel ways.
-                </p>
-                <ul>
-                    <li>Early-stage technology investments across SaaS, AI, and consumer tech</li>
-                    <li>Advisory roles with high-growth startups</li>
-                    <li>Side projects and experimental ventures</li>
-                </ul>
-            </section>
+    <!-- Contact Section -->
+    <div class="section-wrapper">
+        <div class="section-label">/contact</div>
+        <div class="section-content">
+            <p>
+                Building something interesting? I'm always down to talk shop about entrepreneurship, home services tech, or marketplaces. Hit me up on <a href="https://linkedin.com/in/jeremyyamaguchi" target="_blank">LinkedIn</a>, shoot me an <a href="mailto:jeremy@cabanapools.com">email</a>, or just say hey.
+            </p>
+            <p>— Jeremy</p>
+            <div class="contact-buttons">
+                <a href="https://linkedin.com/in/jeremyyamaguchi" class="contact-button" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                    linkedin
+                </a>
+                <a href="mailto:jeremy@cabanapools.com" class="contact-button">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="4" width="20" height="16" rx="2"/>
+                        <path d="M2 7l10 7 10-7"/>
+                    </svg>
+                    email
+                </a>
+                <a href="https://twitter.com/jeremyyamaguchi" class="contact-button" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                    </svg>
+                    twitter
+                </a>
+            </div>
+        </div>
+    </div>
 
-            <section id="contact">
-                <h2>Get in Touch</h2>
-                <div class="contact-links">
-                    <a href="mailto:jeremy@cabanapools.com" class="contact-link">Email</a>
-                    <a href="https://twitter.com/jeremyyamaguchi" class="contact-link" target="_blank" rel="noopener noreferrer">Twitter</a>
-                    <a href="https://linkedin.com/in/jeremyyamaguchi" class="contact-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                </div>
-            </section>
-        </main>
-
-        <footer>
-            <p>&copy; 2025 Jeremy Yamaguchi. All rights reserved and all wrongs righted.</p>
-        </footer>
+    <!-- Footer -->
+    <div class="footer-wrapper">
+        <div class="section-label">/footer</div>
+        <div class="footer-content">
+            <div class="footer-text">© 2025 - Built with Wix. Typeset in SF Pro.</div>
+            <div class="signature">Jeremy Yamaguchi</div>
+        </div>
     </div>
 </body>
 </html>
