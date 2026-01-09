@@ -7,9 +7,9 @@
 
     <!-- Primary Meta Tags -->
     <title>Jeremy Yamaguchi - Entrepreneur, Investor & Builder</title>
-    <meta name="title" content="Jeremy Yamaguchi - Entrepreneur, Investor & Builder">
-    <meta name="description" content="Jeremy Yamaguchi is an entrepreneur, investor, and builder focused on early-stage technology companies and innovative products that shape the future.">
-    <meta name="keywords" content="Jeremy Yamaguchi, entrepreneur, investor, technology, startup, venture capital, builder, innovation">
+    <meta name="title" content="Jeremy Yamaguchi">
+    <meta name="description" content="Jeremy Yamaguchi is an entrepreneur, investor, and builder focused on early-stage technology companies.">
+    <meta name="keywords" content="Jeremy Yamaguchi, Cabana, Lawn Love">
     <meta name="author" content="Jeremy Yamaguchi">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://jeremyyamaguchi.me/">
@@ -17,15 +17,15 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://jeremyyamaguchi.me/">
-    <meta property="og:title" content="Jeremy Yamaguchi - Entrepreneur, Investor & Builder">
-    <meta property="og:description" content="Jeremy Yamaguchi is an entrepreneur, investor, and builder focused on early-stage technology companies and innovative products that shape the future.">
+    <meta property="og:title" content="Jeremy Yamaguchi - Entrepreneur">
+    <meta property="og:description" content="Jeremy Yamaguchi is an entrepreneur, investor, and builder focused on early-stage technology companies.">
     <meta property="og:site_name" content="Jeremy Yamaguchi">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://jeremyyamaguchi.me/">
     <meta property="twitter:title" content="Jeremy Yamaguchi - Entrepreneur, Investor & Builder">
-    <meta property="twitter:description" content="Jeremy Yamaguchi is an entrepreneur, investor, and builder focused on early-stage technology companies and innovative products that shape the future.">
+    <meta property="twitter:description" content="Jeremy Yamaguchi is an entrepreneur, investor, and builder focused on early-stage technology companies.">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -34,7 +34,7 @@
       "@type": "Person",
       "name": "Jeremy Yamaguchi",
       "url": "https://jeremyyamaguchi.me",
-      "jobTitle": "Entrepreneur and Investor",
+      "jobTitle": "CEO of Cabana",
       "description": "Entrepreneur, investor, and builder focused on early-stage technology companies",
       "sameAs": []
     }
@@ -47,75 +47,76 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             color: #1a1a1a;
             background: #fafafa;
+            padding: 40px 20px;
+            max-width: 680px;
+            margin: 0 auto;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
 
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 60px 24px;
-        }
-
-        /* Profile Section */
-        .profile {
+        /* Profile Photo */
+        .profile-section {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
         }
 
-        .profile-pic {
-            width: 120px;
-            height: 120px;
+        .profile-photo {
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
-            margin: 0 auto 24px;
+            object-fit: cover;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
             background: #e0e0e0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 48px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            display: inline-block;
         }
 
-        h1 {
+        .name {
             font-size: 32px;
             font-weight: 600;
             color: #1a1a1a;
             margin-bottom: 8px;
         }
 
-        .subtitle {
-            font-size: 16px;
+        .role {
+            font-size: 18px;
             color: #666;
             font-weight: 400;
+            margin-bottom: 0;
         }
 
-        /* Content Sections */
-        .section {
-            display: grid;
-            grid-template-columns: 80px 1fr;
-            gap: 24px;
-            margin-bottom: 48px;
-            align-items: start;
+        /* Section Layout */
+        .section-wrapper {
+            display: flex;
+            margin-bottom: 50px;
+            gap: 20px;
         }
 
         .section-label {
-            font-size: 14px;
+            font-size: 13px;
             color: #999;
+            min-width: 80px;
             padding-top: 2px;
+            flex-shrink: 0;
         }
 
         .section-content {
-            font-size: 16px;
-            line-height: 1.6;
-            color: #1a1a1a;
+            flex: 1;
         }
 
         .section-content p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #1a1a1a;
             margin-bottom: 16px;
         }
 
@@ -124,16 +125,12 @@
         }
 
         a {
-            color: #0066cc;
+            color: #1a1a1a;
             text-decoration: underline;
+            transition: color 0.2s ease;
         }
 
         a:hover {
-            color: #0052a3;
-        }
-
-        .signature {
-            margin-top: 24px;
             color: #666;
         }
 
@@ -141,159 +138,174 @@
         .contact-buttons {
             display: flex;
             gap: 12px;
-            margin-top: 24px;
+            margin-top: 30px;
             flex-wrap: wrap;
         }
 
-        .btn {
+        .contact-button {
             display: inline-flex;
             align-items: center;
             gap: 8px;
             padding: 10px 20px;
-            border: 1px solid #d0d0d0;
-            border-radius: 8px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
             background: white;
             color: #1a1a1a;
             text-decoration: none;
             font-size: 14px;
-            font-weight: 500;
             transition: all 0.2s ease;
         }
 
-        .btn:hover {
-            border-color: #1a1a1a;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        .contact-button:hover {
+            border-color: #999;
+            background: #fafafa;
         }
 
-        .btn svg {
+        .contact-button svg {
             width: 16px;
             height: 16px;
         }
 
         /* Footer */
-        footer {
-            text-align: center;
-            margin-top: 80px;
-            padding-top: 40px;
-            border-top: 1px solid #e0e0e0;
+        .footer-wrapper {
+            display: flex;
+            margin-top: 60px;
+            padding-top: 30px;
+            gap: 20px;
+        }
+
+        .footer-content {
+            flex: 1;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 14px;
-            color: #666;
         }
 
-        .signature-img {
+        .footer-text {
+            font-size: 14px;
+            color: #1a1a1a;
+        }
+
+        .signature {
             font-family: 'Brush Script MT', cursive;
-            font-size: 20px;
+            font-size: 24px;
             color: #1a1a1a;
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
-            .container {
-                padding: 40px 20px;
-            }
-
-            .section {
-                grid-template-columns: 1fr;
+        @media (max-width: 600px) {
+            .section-wrapper {
+                flex-direction: column;
                 gap: 8px;
             }
 
             .section-label {
-                font-size: 13px;
+                min-width: auto;
             }
 
-            h1 {
-                font-size: 28px;
-            }
-
-            .profile-pic {
-                width: 100px;
-                height: 100px;
-                font-size: 40px;
-            }
-
-            footer {
+            .footer-wrapper {
                 flex-direction: column;
+                gap: 8px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                align-items: flex-start;
                 gap: 16px;
-                text-align: center;
             }
 
             .contact-buttons {
                 flex-direction: column;
             }
 
-            .btn {
+            .contact-button {
                 width: 100%;
                 justify-content: center;
+            }
+
+            .name {
+                font-size: 28px;
+            }
+
+            .role {
+                font-size: 16px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Profile -->
-        <div class="profile">
-            <div class="profile-pic">👤</div>
-            <h1>Jeremy Yamaguchi</h1>
-            <p class="subtitle">Entrepreneur & Investor</p>
-        </div>
+    <!-- Profile Section -->
+    <div class="profile-section">
+        <img src="https://via.placeholder.com/140" alt="Jeremy Yamaguchi" class="profile-photo">
+        <h1 class="name">Jeremy Yamaguchi</h1>
+        <p class="role">Founder & CEO @ Cabana</p>
+    </div>
 
-        <!-- About Section -->
-        <div class="section">
-            <div class="section-label">/about</div>
-            <div class="section-content">
-                <p>Hey! I'm Jeremy. I work with early-stage technology companies, helping founders build products that solve real problems. I've invested in and advised startups across SaaS, AI, and consumer tech, with a focus on teams that move fast and think differently.</p>
-                <p>I'm passionate about building things that matter—whether it's investing in exceptional founders, exploring new technologies, or working on side projects that push boundaries.</p>
+    <!-- About Section -->
+    <div class="section-wrapper">
+        <div class="section-label">/about</div>
+        <div class="section-content">
+            <p>
+                I'm a career entrepreneur and have spent the last fifteen years building companies at the intersection of technology and home services. I most recently founded <a href="https://lawnlove.com" target="_blank">Lawn Love</a>—a YC-backed lawn care marketplace–which I grew to 250 corporate employees and 7,000+ field technicians, with operations in 120 cities across 40 states. In 2021 Lawn Love merged with a competitor to create the largest marketplace in the lawn and garden category.
+            </p>
+            <p>
+                Prior to that I founded another home services company called Golden Shine. We were ranked #5 on the FAST100 list of fastest growing privately owned companies in 2013 and acquired by a PE firm the same year. Prior to that I started a marketing agency in my early 20s, which is where I cut my teeth on growth marketing and lead gen.
+            </p>
+            <p>
+                I'm now building <a href="https://cabanapools.com" target="_blank">Cabana</a>, a tech-enabled roll-up in pool service. We partner with wonderful pool companies, and help them scale.
+            </p>
+        </div>
+    </div>
+
+    <!-- Projects Section -->
+    <div class="section-wrapper">
+        <div class="section-label">/projects</div>
+        <div class="section-content">
+            <p>
+                I invest in companies at the intersection of technology and innovation, with a focus on teams that are solving important problems in novel ways. I take on advisory roles with high-growth startups and work on experimental side projects.
+            </p>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="section-wrapper">
+        <div class="section-label">/contact</div>
+        <div class="section-content">
+            <p>
+                Building something interesting? I'm always down to talk shop about entrepreneurship, home services tech, or marketplaces. Hit me up on <a href="https://linkedin.com/in/jeremyyamaguchi" target="_blank">LinkedIn</a>, shoot me an <a href="mailto:jeremy@cabanapools.com">email</a>, or just say hey.
+            </p>
+            <p>— Jeremy</p>
+            <div class="contact-buttons">
+                <a href="https://linkedin.com/in/jeremyyamaguchi" class="contact-button" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                    linkedin
+                </a>
+                <a href="mailto:jeremy@cabanapools.com" class="contact-button">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="4" width="20" height="16" rx="2"/>
+                        <path d="M2 7l10 7 10-7"/>
+                    </svg>
+                    email
+                </a>
+                <a href="https://twitter.com/jeremyyamaguchi" class="contact-button" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                    </svg>
+                    twitter
+                </a>
             </div>
         </div>
+    </div>
 
-        <!-- Projects Section -->
-        <div class="section">
-            <div class="section-label">/projects</div>
-            <div class="section-content">
-                <p>I invest in companies at the intersection of technology and innovation. My portfolio includes early-stage investments across various sectors, from developer tools to climate tech. I also advise startups on product strategy, growth, and fundraising.</p>
-                <p>Outside of investing, I build tools and experiment with new ideas—always looking for ways to help people work smarter and move faster.</p>
-            </div>
+    <!-- Footer -->
+    <div class="footer-wrapper">
+        <div class="section-label">/footer</div>
+        <div class="footer-content">
+            <div class="footer-text">© 2025 - Built with Wix. Typeset in SF Pro.</div>
+            <div class="signature">Jeremy Yamaguchi</div>
         </div>
-
-        <!-- Contact Section -->
-        <div class="section">
-            <div class="section-label">/contact</div>
-            <div class="section-content">
-                <p>Working on something interesting? I'm always down to talk about new ideas, investment opportunities, or just connect with fellow builders. Hit me up on <a href="https://linkedin.com/in/jeremyyamaguchi" target="_blank" rel="noopener noreferrer">LinkedIn</a>, shoot me an <a href="mailto:hello@jeremyyamaguchi.me">email</a>, or reach out on <a href="https://twitter.com/jeremyyamaguchi" target="_blank" rel="noopener noreferrer">Twitter</a>.</p>
-                <p class="signature">— Jeremy</p>
-
-                <div class="contact-buttons">
-                    <a href="https://twitter.com/jeremyyamaguchi" class="btn" target="_blank" rel="noopener noreferrer">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                        </svg>
-                        twitter
-                    </a>
-                    <a href="mailto:hello@jeremyyamaguchi.me" class="btn">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                            <polyline points="22,6 12,13 2,6"/>
-                        </svg>
-                        email
-                    </a>
-                    <a href="https://linkedin.com/in/jeremyyamaguchi" class="btn" target="_blank" rel="noopener noreferrer">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                        </svg>
-                        linkedin
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Footer -->
-        <footer>
-            <div>© 2025 - Built with passion. Typeset in SF Pro.</div>
-            <div class="signature-img">Jeremy Yamaguchi</div>
-        </footer>
     </div>
 </body>
 </html>
