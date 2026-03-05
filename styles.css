@@ -58,12 +58,15 @@ body {
     gap: 20px;
 }
 
-.section-label {
+h2.section-label {
     font-size: 13px;
+    font-weight: 400;
     color: #999;
     min-width: 80px;
     padding-top: 2px;
     flex-shrink: 0;
+    line-height: 1.6;
+    margin: 0;
 }
 
 .section-content {
